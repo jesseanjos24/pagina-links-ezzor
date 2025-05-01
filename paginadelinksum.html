@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="icon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Ezzor Maker - Páginas de Links</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 100px 20px 20px;
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #ff6a00);
+      background-size: 600% 600%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+
+    header img {
+      height: 40px;
+      vertical-align: middle;
+    }
+
+    header h1 {
+      color: white;
+      font-size: 20px;
+      margin-top: 8px;
+    }
+
+    .main-title {
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .animated-button {
+      background-color: #34004d;
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      display: inline-block;
+      text-align: center;
+      min-width: 250px;
+      flex: 1 1 300px;
+    }
+
+    .animated-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .animated-button:nth-child(1) {
+      animation: fade-in 0.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    .animated-button:nth-child(2) {
+      animation: fade-in 0.5s ease-out forwards 0.3s;
+      opacity: 0;
+    }
+
+    .animated-button:nth-child(3) {
+      animation: fade-in 0.5s ease-out forwards 0.6s;
+      opacity: 0;
+    }
+
+    .animated-button:nth-child(4) {
+      animation: fade-in 0.5s ease-out forwards 0.9s;
+      opacity: 0;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 16px;
+      }
+
+      .main-title {
+        font-size: 18px;
+      }
+
+      .animated-button {
+        font-size: 14px;
+        padding: 12px 20px;
+        min-width: 200px;
+      }
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+      background-color: rgba(0, 0, 0, 0.7);
+      opacity: 0.8;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <header style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; padding-left: 20px;">
+    <img src="kogo.png" alt="Ezzor Maker Logo" style="height: 40px;" />
+    <h1 style="color: white; font-size: 20px; margin: 0;">Ezzor Maker</h1>
+  </header>
+
+  <div class="main-title">COMO PODEMOS TE AJUDAR HOJE?</div>
+
+  <div class="button-container">
+    <a href="#" class="animated-button">Gostaria de um vídeo curto para reels, tiktok e shorts!</a>
+    <a href="#" class="animated-button">Gostaria de um vídeo longo para meu vídeo do YouTube ou curso!</a>
+    <a href="#" class="animated-button">Gostaria de um criativo para minha campanha na internet.</a>
+    <a href="#" class="animated-button">Gostaria de uma arte para post!</a>
+  </div>
+
+  <footer>
+    <p>&copy; Ezzor Maker 2025. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
