@@ -1,0 +1,28 @@
+🚀 Comandos para atualizar seu repositório:
+
+git add .
+git commit -m "Descreva aqui o que você mudou"
+git push
+
+🧠 Explicação rápida:
+git add . → adiciona todas as alterações feitas
+
+git commit -m "mensagem" → salva um ponto de controle com uma descrição do que mudou
+
+git push → envia tudo para o repositório no GitHub
+
+✅ Exemplo prático:
+bash
+Copiar
+Editar
+git add .
+git commit -m "Adicionado rodapé com copyright"
+git push
+Se você quiser ver o que mudou antes de subir, use:
+
+bash
+Copiar
+Editar
+git status      # Mostra arquivos modificados
+git diff        # Mostra as alterações nos arquivos
+Se quiser, posso te mostrar também como configurar o GitHub Pages agora para
