@@ -7,7 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <title>Ezzor Maker - Páginas de Links</title>
+  <meta name="description" content="Veja os serviços de edição e criação visual da Ezzor Maker. Transforme suas ideias em conteúdo visual impactante.">
+  <meta property="og:title" content="Ezzor Maker - Serviços Visuais" />
+  <meta property="og:description" content="Edição de vídeo, criação de criativos, design para redes sociais e muito mais!" />
+  <meta property="og:image" content="https://seusite.com/og-image.jpg" />
+  <meta property="og:url" content="https://seusite.netlify.app" />
+  <title>Serviços Ezzor Maker - Edição de Vídeo, Imagens e Criativos</title>
   <style>
     * {
       margin: 0;
@@ -23,21 +28,21 @@
       justify-content: flex-start;
       min-height: 100vh;
       padding: 100px 20px 20px;
-      background: linear-gradient(135deg, #1e3c72, #2a5298, #ff6a00);
+      background: linear-gradient(135deg, hsl(219, 84%, 10%), #2a5298, #ff6a00);
       background-size: 600% 600%;
       animation: gradientBG 15s ease infinite;
+      transition: background-color 0.3s ease;
     }
 
     @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .dark-mode {
+      background: #121212;
+      color: white;
     }
 
     header {
@@ -47,20 +52,31 @@
       width: 100%;
       background-color: rgba(0, 0, 0, 0.7);
       padding: 10px 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.4);
     }
 
     header img {
       height: 40px;
-      vertical-align: middle;
     }
 
     header h1 {
       color: white;
       font-size: 20px;
-      margin-top: 8px;
+      margin: 0;
+    }
+
+    .toggle-theme {
+      background: #ffffff33;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+      font-size: 14px;
     }
 
     .main-title {
@@ -86,65 +102,60 @@
       padding: 15px 25px;
       border-radius: 8px;
       font-size: 16px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      min-height: 60px;
       min-width: 250px;
       flex: 1 1 300px;
+      opacity: 0;
+      animation: fade-in 0.6s ease-out forwards;
     }
 
     .animated-button:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      background-color: #4d0066;
     }
 
-    .animated-button:nth-child(1) {
-      animation: fade-in 0.5s ease-out forwards;
-      opacity: 0;
+    .animated-button:active {
+      transform: scale(0.97);
     }
 
-    .animated-button:nth-child(2) {
-      animation: fade-in 0.5s ease-out forwards 0.3s;
-      opacity: 0;
-    }
-
-    .animated-button:nth-child(3) {
-      animation: fade-in 0.5s ease-out forwards 0.6s;
-      opacity: 0;
-    }
-
-    .animated-button:nth-child(4) {
-      animation: fade-in 0.5s ease-out forwards 0.9s;
-      opacity: 0;
+    .animated-button:nth-child(n) {
+      animation-delay: calc(0.2s * var(--i, 1));
     }
 
     @keyframes fade-in {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .main-title {
+        font-size: 20px;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      .animated-button {
+        font-size: 15px;
+        padding: 14px 20px;
+        min-width: 220px;
       }
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 16px;
-      }
-
+    @media (max-width: 480px) {
       .main-title {
         font-size: 18px;
       }
-
       .animated-button {
         font-size: 14px;
-        padding: 12px 20px;
-        min-width: 200px;
+        padding: 12px 16px;
+        min-width: 180px;
       }
     }
+
     footer {
       position: fixed;
       bottom: 0;
@@ -157,28 +168,41 @@
       background-color: rgba(0, 0, 0, 0.7);
       opacity: 0.8;
     }
-    
   </style>
 </head>
 <body>
 
-  <header style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; padding-left: 20px;">
-    <img src="kogo.png" alt="Ezzor Maker Logo" style="height: 40px;" />
-    <h1 style="color: white; font-size: 20px; margin: 0;">Ezzor Maker</h1>
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="kogo.png" alt="Ezzor Maker Logo" />
+      <h1>Ezzor Maker</h1>
+    </div>
+    <button class="toggle-theme" onclick="toggleTheme()">🌙 Modo Escuro</button>
   </header>
 
   <div class="main-title">COMO PODEMOS TE AJUDAR HOJE?</div>
 
   <div class="button-container">
-    <a href="#" class="animated-button">Gostaria de um vídeo curto para reels, tiktok e shorts!</a>
-    <a href="#" class="animated-button">Gostaria de um vídeo longo para meu vídeo do YouTube ou curso!</a>
-    <a href="#" class="animated-button">Gostaria de um criativo para minha campanha na internet.</a>
-    <a href="#" class="animated-button">Gostaria de uma arte para post!</a>
+    <a href="https://sites.google.com/view/ezzormaker/edi%C3%A7%C3%A3o-de-v%C3%ADdeos-curtos" class="animated-button">🎬 Edição de Vídeos Curtos (Reels, Shorts, TikTok)</a>
+    <a href="https://sites.google.com/view/ezzormaker/edi%C3%A7%C3%A3o-de-v%C3%ADdeos-longos" class="animated-button">📹 Edição de Vídeos Longos (YouTube, Cursos &+)</a>
+    <a href="https://sites.google.com/view/ezzormaker/criativos-para-campanhas-vid" class="animated-button">📢 Criativos para campanhas – VÍDEO</a>
+    <a href="https://sites.google.com/view/ezzormaker/criativos-para-campanhas-img" class="animated-button">🖼️ Criativos para campanhas – IMAGEM</a>
+    <a href="https://sites.google.com/view/ezzormaker/posts-simples" class="animated-button">📲 Posts simples para Instagram/Facebook</a>
+    <a href="https://sites.google.com/view/ezzormaker/edi%C3%A7%C3%A3o-de-imagens" class="animated-button">📷 Edição de Fotografias</a>
   </div>
 
   <footer>
     <p>&copy; Ezzor Maker 2025. Todos os direitos reservados.</p>
   </footer>
 
+  <script>
+    document.querySelectorAll('.animated-button').forEach((btn, i) => {
+      btn.style.setProperty('--i', i + 1);
+    });
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
